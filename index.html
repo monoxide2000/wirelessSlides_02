@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ACP-159 Redes Inalámbricas</title>
+
+		<meta name="description" content="wireless-slides">
+		<meta name="author" content="Julio César Ramírez-Pacheco">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Kaushan+Script&display=swap" rel="stylesheet">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<link rel="stylesheet" href="css/user.css">
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="myLogo" style="background: url(img/uqroo.png);
+												position: absolute;
+												bottom: 80px;
+												right: 20px;
+												width: 240px;
+												height: 120px;
+												background-size: cover;">
+		</div>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="font-family: 'Kaushan Script', cursive; font-size: 3.1em;"><span style="text-transform: capitalize;"><span>Redes Inalámbricas</span></h1>
+					<h3 style="font-family: 'Kaushan Script', cursive;">F<span style="text-transform: lowercase;">undamentos de transmisión de datos</span></h3>
+					<p style="font-family: 'Dancing Script', cursive;">Dr. Julio César Ramírez-Pacheco</p>
+					<p style="font-size:1.5rem">Presentación en: <a style="color:lightblue;" href="https://monoxide2000.github.io/wirelessSlides_02">https://monoxide2000.github.io/wirelessSlides_02</a></p>
+
+				</section>
+
+				<section data-transition="zoom">
+					<h2>Agenda</h2>
+					<ul>
+						<li class="fragment">Señales de comunicación</li>
+						<li class="fragment">Transmisión de datos digitales y analógicos</li>
+						<li class="fragment">Conclusiones y preguntas.</li>
+					</ul>
+				</section>
+
+
+				<section data-transition="zoom">
+						<h2>Señales</h2>
+							<p class="fragment">Las señales se dividen en:</p>
+							<img class = "fragment" src="img/signal01.png" alt="classification of signals" style="width:70%;">
+				</section>
+
+
+				<section data-transition="zoom">
+					  <h2>Señales analógicas y digitales</h2>
+			      	<img class = "fragment" src="img/analog.png" alt="analog signal" style="width:70%;">
+				</section>
+
+				<section data-transition="zoom">
+							<h2>Señales periódicas</h2>
+							<div class="fragment">
+										<div style="font-family: 'Pacifico';" class="def-block">
+										Definición
+										</div>
+										<div class="def-block-eq">
+										<p style="padding:0; margin:5px;">
+											Una función, $f(t)$, definida para todo $t \in \mathbb{R}$ se dice que es periódica con período $T$ si:
+											$$<br>
+											f(t) = f(t+ T)\; \; \forall t \in \mathbb{R}
+											$$
+											<br>
+									</div>
+							</div>
+							<p class = "fragment" style = "font-size: 35px; text-align: justify;">La constante mínima $T$ que satisface la ecuación de arriba se llama el período fundamental. De igual forma se cumple que
+							$f(t) = f(t+nT)$ para cualquier entero $n\ne 0$.</p>
+					</section>
+
+
+				<section>
+
+					<section data-transition="zoom">
+						  <h2>Señales periódicas: características </h2>
+				      <img src="img/triangular.svg" alt="triFunc" style="width:100%;">
+					</section>
+					<section data-transition="zoom">
+						  <h2>Señales periódicas: características </h2>
+				      <img src="img/sierra.svg" alt="sawtoothFunc" style="width:100%;">
+					</section>
+					<section data-transition="zoom">
+						  <h2>Señales periódicas: características </h2>
+				      <img src="img/square.svg" alt="sqrFunc" style="width:100%;">
+					</section>
+
+				</section>
+
+
+				<section data-transition="zoom">
+					  <h2>Señales periódicas: cont.</h2>
+			      <ul>
+			      	<li class="fragment" style="text-align: justify;">La suma, resta y multiplicación de funciones periódicas con período $T$ es periódica con período $T$.</li>
+			      	<li class="fragment" style="text-align: justify;">Si $f_1(t+T_1)=f_1(t)$ y $f_2(t+T_2)=f_2(t)$ entonces $f_1(t)\pm f_2(t)$ es periódica si $T_1/T_2$ es racional.</li>
+			      	<li class="fragment">$\int_{\alpha}^{\alpha+T}{f(t) \, dt} = \int_{\beta}^{\beta+ T}{f(t)\, dt}$.</li>
+			      </ul>
+				</section>
+
+    <section>
+				<section data-transition="zoom">
+					  <h2>Señales periódicas: <span style="font-size: 50px;">$\int_{\beta}^{\beta+ T}{f(t)\, dt}$</span></h2>
+			      <img src="img/sine01.svg" alt="periodicFun01" style="width:100%;">
+				</section>
+
+				<section data-transition="zoom">
+					<h2>Señales periódicas: <span style="font-size: 50px;">$\int_{\beta}^{\beta+ T}{f(t)\, dt}$</span></h2>
+					<img src="img/sine02.svg" alt="periodicFun02" style="width:100%;">
+        </section>
+
+				<section data-transition="zoom">
+					<h2>Señales periódicas: <span style="font-size: 50px;">$\int_{\beta}^{\beta+ T}{f(t)\, dt}$</span></h2>
+					<img src="img/sine03.svg" alt="periodicFun03" style="width:100%;">
+        </section>
+
+		</section>
+
+
+		<section data-transition="zoom">
+			<h2>Señal senoidal
+			<img src="img/sine.png" alt="Sine function" style="width:80%;">
+		</section>
+
+		<section data-transition="zoom">
+			<h2>Señal senoidal: cont.
+			<img src="img/sine1.png" alt="Sine function diff freq" style="width:100%;">
+		</section>
+
+		<section data-transition="zoom">
+			<h2>Señal senoidal: cont.
+			<img src="img/sine2.png" alt="Sine function diff freqz" style="width:100%;">
+		</section>
+
+		<section data-transition="zoom">
+				<h2>Dominio de la frecuencia</h2>
+				<ul>
+					<li class="fragment">Las señales en el dominio del tiempo <span style="color: #bc6c25;">$f(t)$</span> tambien pueden representarse en el dominio de la frecuencia <span style="color: #bc6c25;">$F(\omega)$</span> mediante:</li>
+					<ul>
+						<li class="fragment">Una serie de Fourier si es periódica y continua.</li>
+				  	<li class="fragment">Transformada de Fourier si es aperiodica y continua</li>
+					  <li class="fragment">DFS, DTFT, DFT y FFT si son discretas.</li>
+					</ul>
+				</ul>
+		</section>
+
+
+		<section data-transition="zoom">
+			<h2>Dominio de la frecuencia</h2>
+			<img src="img/freq01.png" alt="Funtion as a sum of sines: frequency domain" style="width:100%;">
+		</section>
+
+
+		<section data-transition="zoom">
+			<h2>Dominio de la frecuencia: cont</h2>
+			<img src="img/freq02.png" alt="Spectrum of function" style="width:80%;">
+		</section>
+
+
+
+				<section data-transition="zoom">
+					  <h2>Codificación analógico / analógico</h2>
+			      	<p class="fragment">Se obtienen como: <span class="fragment" style="color: #bc6c25;">$s(t) = [1+x(t)]\times \cos(2\pi f_c t)$</span>.</p>
+			      	<img class = "fragment" src="img/amMod.jpg" alt="AM Modulation" style="width:65%;">
+				</section>
+
+
+				<section data-transition="zoom">
+					<h2>Codificación analógico / analógico</h2>
+					<img src="img/angleMod.jpg" alt="Angle modulation" style="width:75%;">
+				</section>
+
+				<section data-transition="zoom">
+					<h2>Codificación digital / analógico</h2>
+					<ul>
+						<li class="fragment">De igual forma que el caso anterior, se modifica algún parámetro de: <span class="fragment" style="color: #bc6c25;">$f(t) = A\sin(2\pi f_c t + \phi)$</span>.</li>
+						<li class="fragment">La señal de información es digital, es decir formada de $0$s y $1$s.</li>
+            <li class="fragment">Usualmente a estas codificaciones se les llaman modulaciones digitales.</li>
+            <li class="fragment">Varios tipos importantes como ASK, FSK, PSK, QAM, QPSK, MFSK.</li>
+						</li>
+					</ul>
+				</section>
+
+
+
+						<section data-transition="zoom">
+							<h2>Modulación ASK</h2>
+							<img src="img/ask.jpg" alt="ASK modulation" style="width:75%;">
+						</section>
+
+
+								<section data-transition="zoom">
+									<h2>Modulación FSK</h2>
+									<img src="img/fskSig.jpg" alt="FSK modulation" style="width:90%;">
+								</section>
+
+								<section data-transition="zoom">
+									<h2>Modulación FSK</h2>
+									<img src="img/fsk.jpg" alt="FSK modulation spectra" style="width:90%;">
+								</section>
+
+
+
+									<section data-transition="zoom">
+										<h2>Modulación PSK</h2>
+										<img src="img/psk.jpg" alt="PSK modulation" style="width:90%;">
+									</section>
+
+
+									<section data-transition="zoom">
+										<h2>Codificación digital / digital</h2>
+										<ul>
+											<li class="fragment">En este caso los datos son digitales y las señales de salida son digitales.</li>
+											<li class="fragment">Son utilizados en redes locales de baja y alta velocidad.</li>
+					            <li class="fragment">De igual forma, pueden servir como entrada para los moduladores digital y analógicos para transmisión inalámbrica.</li>
+					            <li class="fragment">Entre las codificaciones que encontramos están las NRZ-L, NRZI, Manchester, AMI, Pseudoternario, etc.</li>
+											</li>
+										</ul>
+									</section>
+
+
+
+									<section data-transition="zoom">
+										<h2>NRZ-L y NRZI</h2>
+										<img src="img/nrzl_nrzi.jpg" alt="NRZL and NRZI" style="width:80%;">
+									</section>
+
+									<section data-transition="zoom">
+										<h2>AMI Bipolar</h2>
+										<img src="img/bipolar_ami.png" alt="Bipolar ami coding" style="width:80%;">
+									</section>
+
+									<section data-transition="zoom">
+										<h2>Pseudoternario</h2>
+										<img src="img/pseudoternary.png" alt="Pseudoternary coding" style="width:80%;">
+									</section>
+
+
+
+									<section data-transition="zoom">
+										<h2>Codificación analógico / digital</h2>
+										<ul>
+											<li class="fragment">En este caso los datos son analógicos y las señales de salida son digitales.</li>
+											<li class="fragment">Se utiliza mucho en las transmisiones de voz sobre medios digitales.</li>
+					            <li class="fragment">Ejemplos de sistemas que utilizan esta codificación son; PCM, PCM diferencial, Modulación Delta, etc.</li>
+					            <li class="fragment">En esta sección ilustraremos el teorema del muestreo.</li>
+											</li>
+										</ul>
+									</section>
+
+
+									<section data-transition="zoom">
+										<h2>PCM</h2>
+										<img src="img/pcm.jpg" alt="PCM modulation" style="width:130%;">
+									</section>
+
+
+
+
+
+
+
+
+
+
+				<section>
+
+					<h2>¿Preguntas?</h2>
+
+				</section>
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				math: {
+					//	mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+
+				menu: {
+		// Specifies which side of the presentation the menu will
+		// be shown. Use 'left' or 'right'.
+		side: 'left',
+
+		// Add slide numbers to the titles in the slide list.
+		// Use 'true' or format string (same as reveal.js slide numbers)
+		numbers: false,
+
+		// Specifies which slide elements will be used for generating
+		// the slide titles in the menu. The default selects the first
+		// heading element found in the slide, but you can specify any
+		// valid css selector and the text from the first matching
+		// element will be used.
+		// Note: that a section data-menu-title attribute or an element
+		// with a menu-title class will take precedence over this option
+		titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+		// If slides do not have a matching title, attempt to use the
+		// start of the text content as the title instead
+		useTextContentForMissingTitles: false,
+
+		// Hide slides from the menu that do not have a title.
+		// Set to 'true' to only list slides with titles.
+		hideMissingTitles: false,
+
+		// Adds markers to the slide titles to indicate the
+		// progress through the presentation. Set to 'false'
+		// to hide the markers.
+		markers: true,
+
+		// Specify custom panels to be included in the menu, by
+		// providing an array of objects with 'title', 'icon'
+		// properties, and either a 'src' or 'content' property.
+		custom: false,
+
+		// Specifies the themes that will be available in the themes
+		// menu panel. Set to 'true' to show the themes menu panel
+		// with the default themes list. Alternatively, provide an
+		// array to specify the themes to make available in the
+		// themes menu panel, for example...
+		// [
+		//     { name: 'Black', theme: 'css/theme/black.css' },
+		//     { name: 'White', theme: 'css/theme/white.css' },
+		//     { name: 'League', theme: 'css/theme/league.css' }
+		// ]
+		themes: false,
+
+		// Specifies the path to the default theme files. If your
+		// presentation uses a different path to the standard reveal
+		// layout then you need to provide this option, but only
+		// when 'themes' is set to 'true'. If you provide your own
+		// list of themes or 'themes' is set to 'false' the
+		// 'themesPath' option is ignored.
+		themesPath: 'css/theme/',
+
+		// Specifies if the transitions menu panel will be shown.
+		// Set to 'true' to show the transitions menu panel with
+		// the default transitions list. Alternatively, provide an
+		// array to specify the transitions to make available in
+		// the transitions panel, for example...
+		// ['None', 'Fade', 'Slide']
+		transitions: false,
+
+		// Adds a menu button to the slides to open the menu panel.
+		// Set to 'false' to hide the button.
+		openButton: true,
+
+		// If 'true' allows the slide number in the presentation to
+		// open the menu panel. The reveal.js slideNumber option must
+		// be displayed for this to take effect
+		openSlideNumber: false,
+
+		// If true allows the user to open and navigate the menu using
+		// the keyboard. Standard keyboard interaction with reveal
+		// will be disabled while the menu is open.
+		keyboard: true,
+
+		// Normally the menu will close on user actions such as
+		// selecting a menu item, or clicking the presentation area.
+		// If 'true', the sticky option will leave the menu open
+		// until it is explicitly closed, that is, using the close
+		// button or pressing the ESC or m key (when the keyboard
+		// interaction option is enabled).
+		sticky: false,
+
+		// If 'true' standard menu items will be automatically opened
+		// when navigating using the keyboard. Note: this only takes
+		// effect when both the 'keyboard' and 'sticky' options are enabled.
+		autoOpen: true,
+
+		// If 'true' the menu will not be created until it is explicitly
+		// requested by calling RevealMenu.init(). Note this will delay
+		// the creation of all menu panels, including custom panels, and
+		// the menu button.
+		delayInit: false,
+
+		// If 'true' the menu will be shown when the menu is initialised.
+		openOnInit: false,
+
+		// By default the menu will load it's own font-awesome library
+		// icons. If your presentation needs to load a different
+		// font-awesome library the 'loadIcons' option can be set to false
+		// and the menu will not attempt to load the font-awesome library.
+		loadIcons: true
+	},
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/math/math.js', async: true },
+					{src: 'plugin/menu/menu.js'},
+					//{ src: 'plugin/katex/katex.js', async: true},
+					//{ src: '../math-katex/math-katex.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+			// JulioCRDev   slideshow
+			var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-white";
+}
+
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000);
+}
+
+		</script>
+
+	</body>
+</html>
